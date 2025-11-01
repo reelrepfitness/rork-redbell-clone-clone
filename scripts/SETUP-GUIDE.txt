@@ -1,0 +1,31 @@
+DATABASE POPULATION GUIDE
+========================
+
+Follow these steps to populate your Supabase database with workout data:
+
+STEP 1: Add Your Data
+----------------------
+1. Open: scripts/workout-data.ts
+2. Replace level1Data array with your Level 1 JSON (from previous message)
+3. Replace level2Data array with your Level 2 JSON (from previous message)
+
+STEP 2: Run the Script
+-----------------------
+In your terminal, run:
+  bun run scripts/populate-workouts.ts
+
+WHAT IT DOES
+------------
+✓ Extracts unique exercises from your data
+✓ Populates the 'exercises' table
+✓ Creates workouts grouped by week/day
+✓ Links exercises to workouts with sets/reps/rest
+
+The script uses upsert, so it's safe to run multiple times!
+
+NEED HELP?
+----------
+If you get errors:
+- Check .env has EXPO_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY
+- Make sure you pasted the JSON arrays in workout-data.ts
+- Check that the levels table has 'level-1' and 'level-2' records
